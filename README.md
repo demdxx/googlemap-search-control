@@ -1,7 +1,7 @@
 googlemap-search-control
 ========================
 
-Search Control, Google Maps API v3.
+Search Control, Google Maps API v3. (<a href="http://demdxx.github.com/googlemap-search-control/">simple example</a>)
 
 Customize Example
 -----------------
