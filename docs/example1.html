@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      html, body, #map_canvas {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+    </style>
+    <title>Google Maps JavaScript API v3: Search control</title>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="../src/gm-search-control.js"></script>
+    <script type="text/javascript">
+      var map;
+      var chicago = new google.maps.LatLng(41.850033, -87.6500523);
+
+      function initialize() {
+        var mapDiv = document.getElementById('map_canvas');
+        var mapOptions = {
+          zoom: 12,
+          center: chicago,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        
+        map = new google.maps.Map(mapDiv, mapOptions);
+        
+        var sControl = new google.maps.SearchControl(map, {});
+        sControl.index = 1;
+        map.controls[google.maps.ControlPosition.TOP_CENTER].push(sControl);
+      }
+
+    </script>
+  </head>
+  <body onload="initialize()">
+    <div id="map_canvas" style="width:100%;height:100%;"></div>
+  </body>
+</html>
